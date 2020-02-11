@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9eaecb7-e080-4554-a92e-9b449f3d60c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sry/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/originalcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/sry/originalcode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sry/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sry/originalcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/originalcode.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +53,11 @@
             <path>
               <item name="hlmos" type="b2602c69:ProjectViewProjectNode" />
               <item name="hlmos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hlmos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hlmos" type="462c0819:PsiDirectoryNode" />
               <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -64,6 +69,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael\Statistiek Vlaanderen\hlmos-statistiek-vlaanderen-twitter\hlmos\sry" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,7 +125,7 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sry/originalcode.py">
+    <entry file="file://$PROJECT_DIR$/src/originalcode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />

@@ -29,14 +29,22 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
+
+
 ##
 ## Collect tweets function and save them
 ##
-def collect_tweets(search, keyword, lang='nl', result_type='mixed', limit=0, retweets=False):
+def collect_tweets(search, keyword, location='belgium', location_granularity = 'country',lang='nl', result_type='mixed', limit=0, retweets=False):
     q = keyword
+
+    places = api.geo_search(query=location, granularity=location_granularity)
+    place_id = places[0].id
+
+    search_query = "{0}&place:{1}".format(keyword, place_id)
+
     if not retweets:
-        q = keyword + " -filter:retweets"
-    tweets = tweepy.Cursor(search, q=q, count=100, lang=lang, result_type=result_type, tweet_mode='extended')
+        search_query = search_query + " -filter:retweets"
+    tweets = tweepy.Cursor(search, q=search_query, count=100, lang=lang, result_type=result_type, tweet_mode='extended')
     tweets = tweets.items(limit)
     x = []
     for tweet in tweets:
@@ -50,11 +58,11 @@ def collect_tweets(search, keyword, lang='nl', result_type='mixed', limit=0, ret
 
 ## A. data collection based on emoticons
 
-x = collect_tweets(api.search, keyword=":)", lang="nl", result_type="mixed", limit=5000)
+x = collect_tweets(api.search, keyword=":)", location='belgium', location_granularity = 'country', lang="nl", result_type="mixed", limit=5000)
 x.to_csv("tweets_positive.csv", encoding='utf-8', index=False, sep=";")
 x.to_pickle("tweets_positive.pck", compression=None)
 
-x = collect_tweets(api.search, keyword=":(", lang="nl", result_type="mixed", limit=5000)
+x = collect_tweets(api.search, keyword=":(", location='belgium', location_granularity = 'country', lang="nl", result_type="mixed", limit=5000)
 x.to_csv("tweets_negative.csv", encoding='utf-8', index=False, sep=";")
 x.to_pickle("tweets_negative.pck", compression=None)
 

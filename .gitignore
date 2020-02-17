@@ -1,1 +1,5 @@
-/venv/*
+/hlmos/venv/*
+/hlmos/keys
+/hlmos/tweets_*
+/hlmos/.idea/*
+/hlmos/src/tweets_*

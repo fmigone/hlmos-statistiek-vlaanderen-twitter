@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9eaecb7-e080-4554-a92e-9b449f3d60c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/collect_tweets.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/collect_tweets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiment_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiment_model.py" afterDir="false" />
-    </list>
+    <list default="true" id="d9eaecb7-e080-4554-a92e-9b449f3d60c7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/src/sentiment_model.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1517">
-              <caret line="164" column="81" lean-forward="true" selection-start-line="164" selection-start-column="81" selection-end-line="164" selection-end-column="81" />
+              <caret line="164" column="81" selection-start-line="164" selection-start-column="81" selection-end-line="164" selection-end-column="81" />
               <folding>
                 <element signature="e#229#248#0" expanded="true" />
               </folding>
@@ -28,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/collect_tweets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+            <state relative-caret-position="565">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -217,7 +214,7 @@
     <entry file="file://$PROJECT_DIR$/src/sentiment_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1517">
-          <caret line="164" column="81" lean-forward="true" selection-start-line="164" selection-start-column="81" selection-end-line="164" selection-end-column="81" />
+          <caret line="164" column="81" selection-start-line="164" selection-start-column="81" selection-end-line="164" selection-end-column="81" />
           <folding>
             <element signature="e#229#248#0" expanded="true" />
           </folding>
@@ -226,8 +223,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/collect_tweets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        <state relative-caret-position="565">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

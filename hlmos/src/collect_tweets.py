@@ -51,6 +51,7 @@ def collect_tweets(search, keyword, location=None, location_granularity = 'count
     x = []
     counter = 0
     while True:
+        #TODO add code that flushed tweets do disk every X tweets (for very large collections)
         try:
             tweet = tweets.next()
             print(counter)
@@ -73,19 +74,19 @@ def collect_tweets(search, keyword, location=None, location_granularity = 'count
 
 ## A. data collection based on emoticons
 
-nb_tweets_to_collect = 5000
+nb_tweets_to_collect = 20000
 
 positive_emoji = [":)", ":-)", ":D", ":-D", ": )"]
 positive_search_string = " OR ".join(positive_emoji)
 
 positive_search_string = positive_emoji[0]
 x = collect_tweets(api.search, keyword=positive_search_string, location=None, location_granularity = 'country', lang="nl", result_type="mixed", limit=nb_tweets_to_collect)
-x.to_csv("tweets_positive.csv", encoding='utf-8', index=False, sep=";")
-x.to_pickle("tweets_positive.pck", compression=None)
+x.to_csv("tweets_positive"+DT.datetime.utcnow().strftime('%Y%m%d %H%M%S%f')+".csv", encoding='utf-8', index=False, sep=";")
+# x.to_pickle("tweets_positive.pck", compression=None)
 
 
 negative_emoji = [":(", ": (", ":'("]
 negative_search_string = " OR ".join(negative_emoji)
 x = collect_tweets(api.search, keyword=negative_search_string, location=None, location_granularity = 'country', lang="nl", result_type="mixed", limit=nb_tweets_to_collect)
-x.to_csv("tweets_negative.csv", encoding='utf-8', index=False, sep=";")
-x.to_pickle("tweets_negative.pck", compression=None)
+x.to_csv("tweets_negative"+DT.datetime.utcnow().strftime('%Y%m%d %H%M%S%f')+".csv", encoding='utf-8', index=False, sep=";")
+# x.to_pickle("tweets_negative.pck", compression=None)

@@ -143,11 +143,14 @@ log_model = log_model.fit(X=X_train, y=y_train)
 log_model.get_params()
 log_model.coef_
 term_index_map['coef'] = log_model.coef_[0]
+
 #Inspect which words have highest coefficients
 print('top keywords negatief sentiment')
 term_index_map.sort_values(by='coef', ascending = True).head(20)
 print('top keywords positief sentiment')
 term_index_map.sort_values(by='coef', ascending = False).head(20)
+#Inspection shows serious overfitting --> use some dimensionality reduction scheme (such as PCA, neural network embeddings,...)
+
 
 
 ## Hoe goed werkte dit model op de test data
@@ -166,3 +169,6 @@ dtm = vectorizer.fit_transform(txt)
 log_model.predict(dtm)
 
 vocab
+
+
+#Use fasttext pretrained word vectors: https://fasttext.cc/docs/en/crawl-vectors.html

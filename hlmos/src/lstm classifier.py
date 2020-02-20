@@ -91,7 +91,7 @@ vocab_size = len(tokenizer.word_index) + 1  # Adding 1 because of reserved 0 ind
 
 from keras.preprocessing.sequence import pad_sequences
 
-maxlen = 200
+maxlen = 50
 
 X_train = pad_sequences(X_train, padding='post', maxlen=maxlen)
 X_test = pad_sequences(X_test, padding='post', maxlen=maxlen)
@@ -99,7 +99,7 @@ X_test = pad_sequences(X_test, padding='post', maxlen=maxlen)
 from keras.models import Sequential
 from keras import layers
 
-embedding_dim = 300
+embedding_dim = 150
 
 model = Sequential()
 model.add(layers.Embedding(input_dim=vocab_size,
@@ -113,12 +113,18 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 model.summary()
 
+#todo add tensorboard logging https://fizzylogic.nl/2017/05/08/monitor-progress-of-your-keras-based-neural-network-using-tensorboard/
+
+from keras.callbacks import TensorBoard
+from time import time
+tensorboard = TensorBoard(log_dir="logs/{}".format(time()))
 
 history = model.fit(X_train, y_train,
                     epochs=20,
-                    verbose=False,
+                    verbose=1,
                     validation_data=(X_test, y_test),
-                    batch_size=10)
+                    batch_size=10,
+                    callbacks=[tensorboard])
 loss, accuracy = model.evaluate(X_train, y_train, verbose=False)
 print("Training Accuracy: {:.4f}".format(accuracy))
 loss, accuracy = model.evaluate(X_test, y_test, verbose=False)

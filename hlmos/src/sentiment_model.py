@@ -13,8 +13,8 @@ import datetime as DT
 
 tweets_file_location=  'C:/Users/Michael/Statistiek Vlaanderen/hlmos-statistiek-vlaanderen-twitter/hlmos/src/'
 #read in tweets
-negative = pd.read_csv(tweets_file_location+'tweets_negative.csv', sep = ";")
-positive = pd.read_csv(tweets_file_location+'tweets_positive.csv', sep = ";")
+negative = pd.read_csv(tweets_file_location+'tweets_negative7k.csv', sep = ";")
+positive = pd.read_csv(tweets_file_location+'tweets_positive20k.csv', sep = ";")
 
 
 print(len(positive))
@@ -96,14 +96,15 @@ tokenize('We proberen even de stemmer uit')
 ## Maak een document/term/matrix
 vectorizer = CountVectorizer(analyzer='word', tokenizer=tokenize, lowercase=True,
                              stop_words=all_emoji, min_df=0.001)
-term_index_map = pd.DataFrame({'i' : list(vectorizer.vocabulary_.values()), 'term' : list(vectorizer.vocabulary_.keys())})
-term_index_map = term_index_map.sort_values(by='i')
+
 
 txt = db.text.tolist()
 dtm = vectorizer.fit_transform(txt)
 dtm_nd = dtm.toarray()
 dtm_nd.shape
 vocab = vectorizer.get_feature_names()
+term_index_map = pd.DataFrame({'i' : list(vectorizer.vocabulary_.values()), 'term' : list(vectorizer.vocabulary_.keys())})
+term_index_map = term_index_map.sort_values(by='i')
 
 ## Maak een logistische regressie en zie naar de parameters van het model
 X_train, X_test, y_train, y_test = train_test_split(dtm_nd, db.target,
@@ -146,9 +147,9 @@ term_index_map['coef'] = log_model.coef_[0]
 
 #Inspect which words have highest coefficients
 print('top keywords negatief sentiment')
-term_index_map.sort_values(by='coef', ascending = True).head(20)
+print(term_index_map.sort_values(by='coef', ascending = True).head(20))
 print('top keywords positief sentiment')
-term_index_map.sort_values(by='coef', ascending = False).head(20)
+print(term_index_map.sort_values(by='coef', ascending = False).head(20))
 #Inspection shows serious overfitting --> use some dimensionality reduction scheme (such as PCA, neural network embeddings,...)
 
 

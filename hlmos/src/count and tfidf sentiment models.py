@@ -1,20 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov  5 22:48:37 2019
-
-@author: Marc Callens, Michael Reusens
-"""
-# eerst "pip install tweepy" uitvoeren in de command line van anaconda prompt
-# of eerst !pip install in IPhyton console
 import pandas as pd
 import datetime as DT
 
 
-
-tweets_file_location=  'C:/Users/Michael/Statistiek Vlaanderen/hlmos-statistiek-vlaanderen-twitter/hlmos/src/'
+tweets_file_location=  'TWEET_FILE_DIRECTORY'
 #read in tweets
-negative = pd.read_csv(tweets_file_location+'tweets_negative7k.csv', sep = ";")
-positive = pd.read_csv(tweets_file_location+'tweets_positive20k.csv', sep = ";")
+negative = pd.read_csv(tweets_file_location+'NEGATIVE_TWEET_FILE_NAME', sep = ";")
+negative['target'] = -1
+positive = pd.read_csv(tweets_file_location+'POSITIVE_TWEET_FILE_NAME', sep = ";")
+positive['target'] = 1
 
 
 print(len(positive))
@@ -24,9 +17,6 @@ print(len(negative))
 positive_emoji = [":)", ":-)", ":D", ":-D", ": )"]
 negative_emoji = [":(", ": (", ":'("]
 all_emoji = positive_emoji+negative_emoji
-
-#Uses Bert on tweets
-# https://towardsdatascience.com/russian-troll-tweets-classification-using-bert-abec09e43558
 
 
 db = positive.append(negative)
@@ -131,7 +121,7 @@ print(classification_report(y_test, y_pred))
 # ====================================================
 
 
-#Lets use TFIDF now https://kavita-ganesan.com/tfidftransformer-tfidfvectorizer-usage-differences/#.Xk6JC2hKibg
+#Lets use TFIDF instead of counter vectorization
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
@@ -194,8 +184,3 @@ print("Testing the testing dataset accuracy of tfidf vect/log regr...")
 print(classification_report(y_test, y_pred))
 
 # Almost no difference between tf-idf and count models
-
-
-# txt = ["een nieuw tweet", "ja zuper"]
-# dtm = vectorizer.fit_transform(txt)
-# log_model.predict(dtm)

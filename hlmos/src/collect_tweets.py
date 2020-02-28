@@ -6,6 +6,8 @@ import time
 ## Connect to Twitter API
 ##
 
+
+#open the file in which the twitter API credentials are stored
 with open('../keys') as f:
     keys = f.readlines()
 keys = [x.strip() for x in keys]
@@ -79,10 +81,10 @@ nb_tweets_to_collect = 20000
 positive_emoji = [":)", ":-)", ":D", ":-D", ": )"]
 positive_search_string = " OR ".join(positive_emoji)
 
-# positive_search_string = positive_emoji[0]
-# x = collect_tweets(api.search, keyword=positive_search_string, location=None, location_granularity = 'country', lang="nl", result_type="mixed", limit=nb_tweets_to_collect)
-# x.to_csv("tweets_positive"+DT.datetime.utcnow().strftime('%Y%m%d %H%M%S%f')+".csv", encoding='utf-8', index=False, sep=";")
-# # x.to_pickle("tweets_positive.pck", compression=None)
+positive_search_string = positive_emoji[0]
+x = collect_tweets(api.search, keyword=positive_search_string, location=None, location_granularity = 'country', lang="nl", result_type="mixed", limit=nb_tweets_to_collect)
+x.to_csv("tweets_positive"+DT.datetime.utcnow().strftime('%Y%m%d %H%M%S%f')+".csv", encoding='utf-8', index=False, sep=";")
+# x.to_pickle("tweets_positive.pck", compression=None)
 
 
 negative_emoji = [":(", ": (", ":'("]

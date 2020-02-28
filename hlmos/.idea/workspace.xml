@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9eaecb7-e080-4554-a92e-9b449f3d60c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collect_tweets.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/collect_tweets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dimensionality reduction of count or tfidf vector.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lstm classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/self trained embedding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pretrained_embedding_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pretrained_embedding_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiment_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/count and tfidf sentiment models.py" afterDir="false" />
-    </list>
+    <list default="true" id="d9eaecb7-e080-4554-a92e-9b449f3d60c7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

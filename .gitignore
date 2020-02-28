@@ -3,5 +3,5 @@
 /hlmos/tweets_*
 /hlmos/.idea/*
 /hlmos/src/tweets_*
-/dutch-word-embeddings/*
+/dutch-word-embeddings
 /hlmos/src/logs

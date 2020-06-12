@@ -1,5 +1,5 @@
 # hlmos-statistiek-vlaanderen-twitter
-This repository contains the code written of the HLG-MOS project on Sentiment Analysis of Flemihs tweets, performed by Statistic Flanders.
+This repository contains the code written of the HLG-MOS project on Sentiment Analysis of Flemish tweets, performed by Statistic Flanders.
 
 The code for the project can be found under /hlmos/src . Please be aware that this project is still under experimental development.
 For questions about the code, contact michael.reusens@vlaanderen.be
